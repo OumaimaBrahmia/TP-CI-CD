@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Étape 1 : Récupérer le code
+      # Étape 1 : Prendre le code
       - name: Télécharger le code
         uses: actions/checkout@v4
 
@@ -42,7 +42,7 @@ jobs:
       - name: Tests unitaires
         run: mvn test
 
-      # Étape 6 : Afficher les résultats
+      # Étape 6 : Résultats
       - name: Afficher résultats
         if: always()
         run: |
@@ -58,6 +58,6 @@ jobs:
       - name: Notifier échec
         if: failure()
         run: |
-          echo "❌ TESTS ÉCHOUÉS"
+          echo " TESTS ÉCHOUÉS"
           echo "Veuillez corriger les erreurs"
 
